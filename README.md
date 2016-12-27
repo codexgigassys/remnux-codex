@@ -10,3 +10,13 @@ sudo docker-compose up
 ```
 
 Then browse to ```http://127.0.0.1:6100```. A folder called ```mongo-data``` will be created with the database. To add new files, copy them to ```files_to_load``` folder and use the ```Load``` of the menu. You can delete the files in the folder after they have been loaded. For the complete documentation, go to the [repo](https://github.com/codexgigassys/codex-backend).
+
+## Update
+You can update all your CodexGigas Docker images with 
+```
+sudo docker images |cut -d' ' -f1 | grep -v REPOSITORY | grep codexgigassys | xargs -I %s sudo docker pull %s
+```
+And also update the compose file with:
+```
+git pull
+```
